@@ -5,13 +5,13 @@ export default class QuoteBox extends Component {
         return (
             <div className="col-xs-12 col-md-6 align-self-center p-5 bg-light"  >
                 <blockquote className="blockquote">
-                    <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    <footer className="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                    <p className="mb-0">{this.props.quote.quote}</p>
+                    <footer className="blockquote-footer"><cite title="Source Title">{this.props.quote.author}</cite></footer>
                 </blockquote>
                 <div className="d-flex mt-5">
-                    <button type="button" class="btn btn-primary mr-2 p-2">Tweet</button>
-                    <button type="button" class="btn btn-primary mr-auto p-2">Tumblr</button>
-                    <button type="button" class="btn btn-primary align-self-end p-2">New quote</button>
+                    <button type="button" className="btn btn-primary mr-2 p-2">Tweet</button>
+                    <button type="button" className="btn btn-primary mr-auto p-2">Tumblr</button>
+                    <button type="button" onClick={this.props.getNewQuote} className="btn btn-primary align-self-end p-2">New quote</button>
                 </div>
             </div>
         );
