@@ -16,6 +16,10 @@ class App extends Component {
     this.getNewQuote = this.getNewQuote.bind(this);
   }
 
+  componentDidMount(){
+    this.getNewQuote();
+  }
+
   async fetchQuotes(){
     const response = await fetch(this.state.url, {
       method:'get'
